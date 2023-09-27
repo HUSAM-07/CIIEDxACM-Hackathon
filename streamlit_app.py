@@ -1,5 +1,8 @@
 import streamlit as st
 
+st.set_page_config(page_title="CIIED Resources Page",page_icon="CIIED_Logo.png")
+
+
 # Define the title and description for your app
 st.title("ACM X CIIED Student Hackathon")
 st.header("Welcome to the Student Hackathon Resource Sharing Platform!")
@@ -11,17 +14,30 @@ if st.button("Access Pitching Presentation Template"):
 # Provide information about the hackathon
 st.subheader("Hackathon Details")
 st.markdown("This student hackathon is organized by ACM and CIIED Dubai. Here are some key details:")
-st.markdown("- Date: 28th September")
-st.markdown("- Time: From 3PM")
+st.markdown("- Date: [Insert Date]")
+st.markdown("- Time: [Insert Time]")
 st.markdown("- Duration: 2 mins pitch + 5 mins Q&A")
-st.markdown("- Location: Auditorium")
+st.markdown("- Location: [Insert Location]")
 st.markdown("- Registration Deadline: [Insert Deadline]")
 st.markdown("- For more information, visit the [CIIED Website](insert_website_link_here)")
 
 # Embed the content from the provided website
 st.subheader("Resource: How to Design a Better Pitch Deck")
-st.markdown("Here is a resource that can help you design a better pitch deck for the hackathon:")
-st.markdown("[How to Design a Better Pitch Deck](https://www.ycombinator.com/library/4T-how-to-design-a-better-pitch-deck)")
+st.sidebar.markdown("**How to Design a Better Pitch Deck**")
+
+with st.sidebar.expander("How to Design a Better Pitch Deck", expanded=True):
+    st.markdown("""
+        A pitch deck is a brief presentation that gives potential investors or clients an overview of your business plan, products, services, and growth traction. It is typically used to raise funding or secure new partnerships.
+
+        A well-designed pitch deck can be a powerful tool for conveying your vision and persuading others to invest in your business. Here are some tips on how to design a better pitch deck:
+
+        * **Start with a strong hook.** Your first slide should grab the audience's attention and make them want to learn more. This could be a bold statement, a compelling story, or a provocative question.
+        * **Keep it simple.** Your pitch deck should be easy to follow and understand. Use clear and concise language, and avoid using too much jargon.
+        * **Focus on the key points.** Don't try to cram too much information into your pitch deck. Focus on the most important aspects of your business, such as the problem you are solving, your solution, and your target market.
+        * **Use visuals.** Visuals can help to make your pitch deck more engaging and easier to understand. Use charts, graphs, and images to illustrate your key points.
+        * **Practice, practice, practice.** Before you deliver your pitch, practice it multiple times in front of a mirror or with a friend. This will help you to deliver your presentation smoothly and confidently.
+    """)
+
 
 # Add rules for the hackathon
 st.subheader("Hackathon Rules")
