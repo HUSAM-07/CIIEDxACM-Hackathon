@@ -60,5 +60,5 @@ st.markdown("- 3rd Place: [Prize Details]")
 # You can add more sections, resources, or information as needed
 
 # Footer
-st.markdown("For any questions or assistance, please contact us at [email@example.com].")
+st.markdown("For any questions or assistance, please contact us at [ciie@dubai.bits-pilani.ac.in].")
 
