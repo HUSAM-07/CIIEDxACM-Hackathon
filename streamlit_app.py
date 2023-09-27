@@ -14,12 +14,12 @@ if st.button("Access Pitching Presentation Template"):
 # Provide information about the hackathon
 st.subheader("Hackathon Details")
 st.markdown("This student hackathon is organized by ACM and CIIED Dubai. Here are some key details:")
-st.markdown("- Date: [Insert Date]")
-st.markdown("- Time: [Insert Time]")
+st.markdown("- Date: 28th September")
+st.markdown("- Time: From 3PM")
 st.markdown("- Duration: 2 mins pitch + 5 mins Q&A")
-st.markdown("- Location: [Insert Location]")
-st.markdown("- Registration Deadline: [Insert Deadline]")
-st.markdown("- For more information, visit the [CIIED Website](insert_website_link_here)")
+st.markdown("- Location: Auditorium")
+st.markdown("- Registration Deadline: 27th September")
+st.markdown("- For more information, visit the [CIIED Website](https://ciied.netlify.app/)")
 
 # Embed the content from the provided website
 st.subheader("Resource: How to Design a Better Pitch Deck")
