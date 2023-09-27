@@ -62,6 +62,3 @@ st.markdown("- 3rd Place: [Prize Details]")
 # Footer
 st.markdown("For any questions or assistance, please contact us at [email@example.com].")
 
-# Run the app
-if __name__ == "__main__":
-    st.run()
