@@ -8,7 +8,7 @@ st.header("Welcome to the Student Hackathon Resource Sharing Platform!")
 
 # Create a button to access the PPT
 if st.button("Access Pitching Presentation Template"):
-    st.markdown("[Download Pitching Presentation Template]("C:\Users\UNIHU\Desktop\CIIED.pptx")
+    st.markdown("[Download Pitching Presentation Template](insert_link_to_ppt_here)")
 
 # Provide information about the hackathon
 st.subheader("Hackathon Details")
