@@ -95,4 +95,4 @@ for time, event in selected_events.items():
 
 # Footer
 st.markdown("For any questions or assistance, please contact us at ciie@dubai.bits-pilani.ac.in.")
-st.markdown("Made with ❤️ by ACM and CIIED")
+st.markdown("Made with ❤️ by CIIED")
