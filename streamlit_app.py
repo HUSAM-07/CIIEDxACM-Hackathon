@@ -2,20 +2,20 @@ import streamlit as st
 
 st.set_page_config(page_title="CIIED Resources Page", page_icon="CIIED_Logo.png")
 
-# Define the title and description for your app
+
 st.title("ACM X CIIED Student Hackathon")
 st.header("Welcome to the Student Hackathon Resource Sharing Platform!")
 
-# Create a button to access the PPT
+
 if st.button("Access Pitching Presentation Template"):
     st.markdown("[Download Pitching Presentation Template](insert_link_to_ppt_here)")
 
-# Provide information about the hackathon
+
 st.subheader("Hackathon Details")
 st.markdown("This student hackathon is organized by ACM and CIIED Dubai. Here are some key details:")
 st.markdown("- Date: 28th September")
 st.markdown("- Time: From 3 PM")
-st.markdown("- Duration: 2 mins pitch + 5 mins Q&A")
+st.markdown("- Duration: 2 mins pitch + 3 mins Q&A")
 st.markdown("- Location: Auditorium")
 st.markdown("- Registration Deadline: 27th September")
 st.markdown("- For more information, visit the [CIIED Website](https://ciied.netlify.app/)")
