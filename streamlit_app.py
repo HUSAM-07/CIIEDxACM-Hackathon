@@ -4,8 +4,8 @@ st.set_page_config(page_title="CIIED Resources Page",page_icon="CIIED_Logo.png")
 
 
 # Define the title and description for your app
-st.title("ACM X CIIED Student Hackathon")
-st.header("Welcome to the Student Hackathon Resource Sharing Platform!")
+st.title("CIIED Resources Page")
+st.header("Welcome to the Center for Innovation & Incubation BPDC Resource Sharing Platform!")
 
 # Create a button to access the PPT
 if st.button("Access Pitching Presentation Template"):
