@@ -4,7 +4,7 @@ import numpy as np
 import plotly.express as px
 
 # Set the page title and icon
-st.set_page_config(page_title="Awesome App", page_icon="🚀")
+st.set_page_config(page_title="CIIED App", page_icon="🚀")
 
 # Sidebar
 st.sidebar.title("Navigation")
