@@ -1,62 +1,44 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import plotly.express as px
+import requests
+from bs4 import BeautifulSoup
 
-# Set the page title and icon
-st.set_page_config(page_title="CIIED App", page_icon="🚀")
+# Define the categories
+categories = ["Business", "Finance", "Legal", "Marketing", "Product", "Tech"]
 
-# Sidebar
-st.sidebar.title("Navigation")
-selected_category = st.sidebar.radio("Select a Category", ["Home", "Data Analysis", "Visualization", "About Us"])
+# Create a dictionary to store the scraped resources and tools
+resources = {}
 
-# Home Page
-if selected_category == "Home":
-    st.title("Welcome to the Awesome App")
-    st.write("Explore various categories and features in this app.")
-    st.image("app_image.jpg", use_column_width=True)
+# Scrape the website
+for category in categories:
+  url = f"https://www.founderresources.io/resources/{category}/"
+  response = requests.get(url)
+  soup = BeautifulSoup(response.content, "html.parser")
 
-# Data Analysis Page
-if selected_category == "Data Analysis":
-    st.title("Data Analysis")
+  # Find all the resources and tools on the page
+  resources[category] = []
+  for resource in soup.find_all("div", class_="resource"):
+    title = resource.find("h3").text
+    link = resource.find("a", class_="resource-link")["href"]
 
-    # Upload CSV file
-    uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
-    
-    if uploaded_file is not None:
-        st.subheader("Data Preview")
-        df = pd.read_csv(uploaded_file)
-        st.write(df.head())
+    resources[category].append({
+      "title": title,
+      "link": link
+    })
 
-        st.subheader("Data Summary")
-        st.write(df.describe())
+# Create a Streamlit page
+st.set_page_config(page_title="Founder Resources", page_icon="logo.png")
 
-# Visualization Page
-if selected_category == "Visualization":
-    st.title("Visualization")
-    st.write("Explore interactive visualizations.")
+# Display the title and header
+st.title("Founder Resources")
+st.header("Welcome to the Founder Resources Platform!")
 
-    # Create sample data
-    data = pd.DataFrame(np.random.rand(100, 2), columns=["X", "Y"])
+# Display the resources and tools
+for category in categories:
+  st.subheader(category)
 
-    # Scatter Plot
-    st.subheader("Scatter Plot")
-    fig = px.scatter(data, x="X", y="Y")
-    st.plotly_chart(fig)
+  for resource in resources[category]:
+    st.markdown(f"- [{resource['title']}]({resource['link']})")
 
-    # Bar Chart
-    st.subheader("Bar Chart")
-    data_bar = pd.DataFrame({"Category": ["A", "B", "C"], "Value": [30, 45, 22]})
-    fig_bar = px.bar(data_bar, x="Category", y="Value")
-    st.plotly_chart(fig_bar)
-
-# About Us Page
-if selected_category == "About Us":
-    st.title("About Us")
-    st.write("We are a team of developers creating amazing apps.")
-    st.image("team_image.jpg", use_column_width=True)
-
-# Footer
-st.sidebar.markdown("---")
-st.sidebar.text("Contact us at [email@example.com]")
-st.sidebar.text("Made with ❤️ by the Awesome Team")
+# Display the footer
+st.markdown("For any questions or assistance, please contact us at info@founderresources.io.")
+st.markdown("Made with ❤️ by Founder Resources")
